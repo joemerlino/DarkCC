@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = darkccprefs;
+	cell = PSLinkCell;
+	detail = darkccprefsListController;
+	icon = darkccprefs.png;
+	isController = 1;
+	label = DarkCC;
+    };
+}
