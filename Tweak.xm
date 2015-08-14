@@ -1,16 +1,26 @@
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <substrate.h>
 
-static BOOL enabled=YES;
+static BOOL enabled = YES;
+static BOOL first = YES;
 #define setin_domain CFSTR("com.joemerlino.darkcc")
 
-%hook SBControlCenterContentView
-- (id)initWithFrame:(struct CGRect)arg1{
-	if(enabled){
-		id cc = %orig();
-		[cc setBackgroundColor:[%c(UIColor) colorWithWhite:40.0/255 alpha:0.7]];
-		return cc;
+%hook SBControlCenterContentContainerView
+-(void)controlCenterWillBeginTransition{
+	%orig;
+	if(first){
+		first = NO;
+		UIView * darkeningView = MSHookIvar<UIView*>(self,"_lighteningView");
+		if(enabled){
+			[darkeningView setBackgroundColor:[UIColor colorWithWhite:0 alpha:1]];
+			darkeningView.alpha = 0.6;
+		}
+		else{
+			[darkeningView setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
+			darkeningView.alpha = 0.17;
+		}
 	}
-	else return %orig();
 }
 %end
 
@@ -19,7 +29,7 @@ static void LoadSettings()
 	CFPreferencesAppSynchronize(CFSTR("com.joemerlino.darkcc"));
 	NSString *n=(NSString*)CFPreferencesCopyAppValue(CFSTR("enabled"), setin_domain);
 	enabled = (n)? [n boolValue]:YES;
- 	NSLog(@"ENABLED DARKCC: %d",enabled);
+	first = YES;
 }
 
 %ctor

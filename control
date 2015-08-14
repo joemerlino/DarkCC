@@ -1,9 +1,10 @@
 Package: com.joemerlino.darkcc
 Name: DarkCC
-Depends: mobilesubstrate, preferenceloader, firmware(>=7.0)
+Depends: mobilesubstrate, preferenceloader, firmware(>=7.0), com.a3tweaks.flipswitch (>= 1.0.3)
 Version: 0.0.1
 Architecture: iphoneos-arm
 Description: Makes darker the Control Center. Enable/disable in settings.
 Maintainer: Joe Merlino
 Author: Joe Merlino
 Section: Tweaks
+Homepage: https://github.com/joemerlino/
