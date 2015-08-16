@@ -13,8 +13,8 @@ static BOOL first = YES;
 		first = NO;
 		UIView * darkeningView = MSHookIvar<UIView*>(self,"_lighteningView");
 		if(enabled){
-			[darkeningView setBackgroundColor:[UIColor colorWithWhite:0 alpha:1]];
-			darkeningView.alpha = 0.6;
+			[darkeningView setBackgroundColor:[UIColor colorWithWhite:0.17 alpha:1]];
+			darkeningView.alpha = 0.71;
 		}
 		else{
 			[darkeningView setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
