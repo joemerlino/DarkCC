@@ -5,11 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>darkcctoggle</string>
+	<string>darkccprefs</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.joemerlino.darkcctoggle</string>
-	<key>CFBundleDisplayName</key>
-	<string>darkcctoggle</string>
+	<string>com.joemerlino.darkccprefs</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -25,8 +23,6 @@
 	<key>MinimumOSVersion</key>
 	<string>3.0</string>
 	<key>NSPrincipalClass</key>
-	<string>darkcctoggleSwitch</string>
-	<key>alternate-action-url</key>
-	<string>prefs:root=DarkCC</string>
+	<string>darkccprefsListController</string>
 </dict>
 </plist>

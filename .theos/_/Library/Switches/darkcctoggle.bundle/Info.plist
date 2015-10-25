@@ -27,6 +27,6 @@
 	<key>NSPrincipalClass</key>
 	<string>darkcctoggleSwitch</string>
 	<key>alternate-action-url</key>
-	<string>prefs:</string>
+	<string>prefs:root=DarkCC</string>
 </dict>
 </plist>
